@@ -11,10 +11,23 @@ namespace WillieGame.Tests
     [TestClass()]
     public class WillieHandTests
     {
+        /// <summary>
+        /// Use Case A1- Nine and jack, Expect Willie of 19
+        /// </summary>
         [TestMethod()]
-        public void WillieHandTest()
+        public void WillieHandTestA1()
         {
-            Assert.Fail();
+            //Arrange
+            int card1 = 9;
+            int card2 = 11;
+            WillieHand target = new WillieHand(card1, card2);
+            int expected = 19;
+
+            //Act
+            int actual = target.Willie;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
