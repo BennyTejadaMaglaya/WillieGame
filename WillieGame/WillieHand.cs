@@ -14,10 +14,10 @@
         /// </summary>
         /// <param name="CardOne">First card in the Willie hand</param>
         /// <param name="CardTwo">Second card in the Willie hand</param>
-        public WillieHand(int CardOne, int CardTwo)
+        public WillieHand(int CardOne, int? CardTwo)
         {
             _CardOne = CardOne;
-            _CardTwo = CardTwo;
+            _CardTwo = CardTwo.GetValueOrDefault();
         }
 
         /// <summary>

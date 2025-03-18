@@ -38,7 +38,7 @@ namespace WillieGame.Tests
         {
             //Arrange
             int card1 = 11;
-            int card2 = null;
+            int? card2 = null;
             WillieHand target = new WillieHand(card1, card2);
             int expected = 10;
 
