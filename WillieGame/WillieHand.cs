@@ -1,6 +1,6 @@
 ﻿namespace WillieGame
 {
-    public class Class1
+    public partial class WillieHand
     {
 
     }
