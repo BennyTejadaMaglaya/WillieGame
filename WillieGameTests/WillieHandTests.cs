@@ -206,5 +206,95 @@ namespace WillieGame.Tests
         }
 
         #endregion
+
+        #region Exercie 2 - Part A
+        /// <summary>
+        /// Ex2 UseCase A1 - Below Lower boundary for card two 
+        /// ArgumentOutOfRangeException
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTest2A1()
+        {
+            //Arrange
+            int cardOne = 7;
+            int? cardTwo = -1;
+
+            //Act
+            try
+            {
+                WillieHand target = new WillieHand(cardOne, cardTwo);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                // Assert
+                StringAssert.Contains(e.Message, WillieHand.CardValueTooLowMessage);
+                return;
+            }
+            Assert.Fail("Failed to get the expected exception.");
+        }
+
+        /// <summary>
+        /// Ex2 UseCase A2 - Above Lower boundary for card two 
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTest2A2()
+        {
+            //Arrange
+            int cardOne = 7;
+            int? cardTwo = null;
+            WillieHand target = new WillieHand(cardOne, cardTwo);
+            int expected = 7;
+
+            //Act
+            int actual = target.Willie;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Ex2 UseCase A3 - Below Upper boundary for card two 
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTest2A3()
+        {
+            //Arrange
+            int cardOne = 7;
+            int? cardTwo = 13;
+            WillieHand target = new WillieHand(cardOne, cardTwo);
+            int expected = 17;
+
+            //Act
+            int actual = target.Willie;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Ex2 UseCase A4 - Above Upper boundary for card two 
+        /// ArgumentOutOfRangeException
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTest2A4()
+        {
+            //Arrange
+            int cardOne = 7;
+            int? cardTwo = 14;
+
+            //Act
+            try
+            {
+                WillieHand target = new WillieHand(cardOne, cardTwo);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                // Assert
+                StringAssert.Contains(e.Message, WillieHand.CardValueTooHighMessage);
+                return;
+            }
+            Assert.Fail("Failed to get the expected exception.");
+        }
+        #endregion
     }
 }

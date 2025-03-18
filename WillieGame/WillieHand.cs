@@ -8,6 +8,8 @@
         private int _CardOne;
         private int _CardTwo;
         private int _Willie;
+        public const string CardValueTooLowMessage = "Invalid Card value - too low";
+        public const string CardValueTooHighMessage = "Invalid Card value - too high";
 
         /// <summary>
         /// Pass the integer values of the cards as you construct the hand
@@ -18,6 +20,22 @@
         {
             _CardOne = CardOne;
             _CardTwo = CardTwo.GetValueOrDefault();
+            if (_CardOne > 13)
+            {
+                throw new System.ArgumentOutOfRangeException("Card One", _CardOne, CardValueTooHighMessage);
+            }
+            else if (_CardTwo > 13)
+            {
+                throw new System.ArgumentOutOfRangeException("Card Two", _CardTwo, CardValueTooHighMessage);
+            }
+            else if (_CardOne < 1)
+            {
+                throw new System.ArgumentOutOfRangeException("Card One", _CardOne, CardValueTooLowMessage);
+            }
+            else if (_CardTwo < 0)
+            {
+                throw new System.ArgumentOutOfRangeException("Card Two", _CardTwo, CardValueTooLowMessage);
+            }
         }
 
         /// <summary>
