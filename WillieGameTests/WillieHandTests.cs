@@ -296,5 +296,96 @@ namespace WillieGame.Tests
             Assert.Fail("Failed to get the expected exception.");
         }
         #endregion
+
+        #region Exercise 2 - Part B
+
+        /// <summary>
+        /// Ex2 UseCase B1 - 7, Jack - check both willie (17) and wonka (11)
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTestB1()
+        {
+            //Arrange
+            int cardOne = 7;
+            int? cardTwo = 11;
+            WillieHand target = new WillieHand(cardOne, cardTwo);
+            int expectedWillie = 17;
+            int expectedWonka = 11;
+
+            //Act
+            int actualWillie = target.Willie;
+            int actualWonka = target.Wonka;
+
+            //Assert
+            Assert.AreEqual(expectedWillie, actualWillie, "Willie value not equal");
+            Assert.AreEqual(expectedWonka, actualWonka, "Wonka value not equal");
+        }
+
+        /// <summary>
+        /// Ex2 UseCase B2 - Queen, Ace - check both willie and wonka 
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTestB2()
+        {
+            //Arrange
+            int cardOne = 12;
+            int? cardTwo = 1;
+            WillieHand target = new WillieHand(cardOne, cardTwo);
+            int expectedWillie = 11;
+            int expectedWonka = 12;
+
+            //Act
+            int actualWillie = target.Willie;
+            int actualWonka = target.Wonka;
+
+            //Assert
+            Assert.AreEqual(expectedWillie, actualWillie, "Willie value not equal");
+            Assert.AreEqual(expectedWonka, actualWonka, "Wonka value not equal");
+        }
+
+        /// <summary>
+        /// Ex2 UseCase B3 - King, Jack - check both willie and wonka 
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTestB3()
+        {
+            //Arrange
+            int cardOne = 13;
+            int? cardTwo = 11;
+            WillieHand target = new WillieHand(cardOne, cardTwo);
+            int expectedWillie = 20;
+            int expectedWonka = 13;
+
+            //Act
+            int actualWillie = target.Willie;
+            int actualWonka = target.Wonka;
+
+            //Assert
+            Assert.AreEqual(expectedWillie, actualWillie, "Willie value not equal");
+            Assert.AreEqual(expectedWonka, actualWonka, "Wonka value not equal");
+        }
+
+        /// <summary>
+        /// Ex2 UseCase B4 - 7, 7 - check both willie and wonka 
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTestB4()
+        {
+            //Arrange
+            int cardOne = 7;
+            int? cardTwo = 7;
+            WillieHand target = new WillieHand(cardOne, cardTwo);
+            int expectedWillie = 14;
+            int expectedWonka = 7;
+
+            //Act
+            int actualWillie = target.Willie;
+            int actualWonka = target.Wonka;
+
+            //Assert
+            Assert.AreEqual(expectedWillie, actualWillie, "Willie value not equal");
+            Assert.AreEqual(expectedWonka, actualWonka, "Wonka value not equal");
+        }
+        #endregion
     }
 }

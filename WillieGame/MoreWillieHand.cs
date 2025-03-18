@@ -8,5 +8,19 @@ namespace WillieGame
 {
     public partial class WillieHand
     {
+        public int Wonka
+        {
+            get
+            {
+                if (_CardOne > _CardTwo)
+                {
+                    return _CardOne;
+                }
+                else
+                {
+                    return _CardTwo;
+                }
+            }
+        }
     }
 }
