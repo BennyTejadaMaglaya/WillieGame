@@ -29,5 +29,24 @@ namespace WillieGame.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Use Case B7- Jack and null, Expect Willie of 10
+        /// </summary>
+        [TestMethod()]
+        public void WillieHandTestB7()
+        {
+            //Arrange
+            int card1 = 11;
+            int card2 = null;
+            WillieHand target = new WillieHand(card1, card2);
+            int expected = 10;
+
+            //Act
+            int actual = target.Willie;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
