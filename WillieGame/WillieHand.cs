@@ -31,8 +31,8 @@
                     _Willie = 10;
                 else _Willie = _CardOne;
                 if (_CardTwo > 10)
-                    _Willie = 10;
-                else _Willie = _CardTwo;
+                    _Willie += 10;
+                else _Willie += _CardTwo;
                 return _Willie;
             }
         }
